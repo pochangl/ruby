@@ -2337,6 +2337,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6390399557045661315, guid: 22179a4cdb3cbe57e94b3e9cad7f7424, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1671954425713680118, guid: 22179a4cdb3cbe57e94b3e9cad7f7424, type: 3}
       propertyPath: m_Name
       value: MrClockwork

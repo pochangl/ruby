@@ -1876,11 +1876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3698341092089682925, guid: dd811156ae610aa58913895969adbacb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.44
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 3698341092089682925, guid: dd811156ae610aa58913895969adbacb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.57
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 3698341092089682925, guid: dd811156ae610aa58913895969adbacb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1912,6 +1912,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3698341092089682925, guid: dd811156ae610aa58913895969adbacb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698341092089682926, guid: dd811156ae610aa58913895969adbacb, type: 3}
+      propertyPath: m_Size.x
+      value: 11.616337
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698341092089682927, guid: dd811156ae610aa58913895969adbacb, type: 3}
+      propertyPath: m_AutoTiling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698341092089682927, guid: dd811156ae610aa58913895969adbacb, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698341092089682927, guid: dd811156ae610aa58913895969adbacb, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 11.616337
+      objectReference: {fileID: 0}
+    - target: {fileID: 3698341092089682927, guid: dd811156ae610aa58913895969adbacb, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTiling
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

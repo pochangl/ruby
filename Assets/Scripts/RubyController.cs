@@ -11,10 +11,12 @@ public class RubyController : MonoBehaviour
     float horizontal;
     float vertical;
 
+    public int health { get {return currentHealth;}}
+
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        currentHealth = 1;
     }
 
     // Update is called once per frame

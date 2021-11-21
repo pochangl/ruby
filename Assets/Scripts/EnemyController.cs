@@ -41,4 +41,13 @@ public class EnemyController : MonoBehaviour
         position = position + direction * Time.deltaTime * speed;
         rbody.MovePosition(position);
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        RubyController player = other.gameObject.GetComponent<RubyController>();
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
+    }
 }

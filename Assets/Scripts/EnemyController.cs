@@ -15,10 +15,13 @@ public class EnemyController : MonoBehaviour
 
     float timer;
 
+    Animator animator;
+
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
         direction = new Vector2(1, 0);
+        animator = GetComponent<Animator>();
         ChangeDirection();
     }
 
@@ -27,6 +30,11 @@ public class EnemyController : MonoBehaviour
         direction = directions[directionIndex % 4];
         directionIndex += 1;
         timer = changeTime;
+    }
+
+    void Update() {
+        animator.SetFloat("Move X", direction.x);
+        animator.SetFloat("Move Y", direction.y);
     }
 
     void FixedUpdate()

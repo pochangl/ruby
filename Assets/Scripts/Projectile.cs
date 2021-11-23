@@ -12,15 +12,24 @@ public class Projectile : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Launch(Vector2 direction, float force) {
-        if (rbody == null) {
+    public void Launch(Vector2 direction, float force)
+    {
+        if (rbody == null)
+        {
             rbody = GetComponent<Rigidbody2D>();
         }
         rbody.AddForce(direction * force);
     }
 
-    void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("Projectile Collision with " + other.gameObject);
+    void OnCollisionEnter2D(Collision2D other)
+    {
+
+        EnemyController e = other.collider.GetComponent<EnemyController>();
+        if (e != null)
+        {
+            e.Fix();
+        }
         Destroy(gameObject);
+
     }
 }

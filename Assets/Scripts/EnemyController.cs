@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
 
     Animator animator;
 
+    bool broken = true;
+
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
@@ -32,13 +34,18 @@ public class EnemyController : MonoBehaviour
         timer = changeTime;
     }
 
-    void Update() {
+    void Update()
+    {
         animator.SetFloat("Move X", direction.x);
         animator.SetFloat("Move Y", direction.y);
     }
 
     void FixedUpdate()
     {
+        if (broken)
+        {
+            return;
+        }
         if (timer < 0)
         {
             ChangeDirection();
@@ -57,5 +64,10 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeHealth(-1);
         }
+    }
+
+    public void Fix()
+    {
+        broken = false;
     }
 }

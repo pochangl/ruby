@@ -17,6 +17,8 @@ public class RubyController : MonoBehaviour
 
     public int health { get { return currentHealth; } }
 
+    public GameObject projectilePrefab;
+
     Animator animator;
     Vector2 lookDirection = new Vector2(1,0);
 
@@ -53,6 +55,10 @@ public class RubyController : MonoBehaviour
         animator.SetFloat("Look Y", lookDirection.y);
         animator.SetFloat("Speed", move.magnitude);
 
+        if (Input.GetKeyDown(KeyCode.C)) {
+            Launch();
+        }
+
     }
 
     void FixedUpdate()
@@ -69,7 +75,7 @@ public class RubyController : MonoBehaviour
         {
             if (!isInvincible)
             {
-                print(isInvincible + "/" + health);
+                Debug.Log(isInvincible + "/" + health);
                 currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
                 isInvincible = true;
                 Debug.Log(currentHealth + "/" + maxHealth);
@@ -82,4 +88,12 @@ public class RubyController : MonoBehaviour
         }
 
     }
+
+    void Launch() {
+        GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + lookDirection*0.8f, Quaternion.identity);
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        projectile.Launch(lookDirection, 300);
+        animator.SetTrigger("Launch");
+    }
+
 }
